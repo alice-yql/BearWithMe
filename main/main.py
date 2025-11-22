@@ -11,6 +11,7 @@ import os
 import time
 from dotenv import load_dotenv
 
+THRESHOLD = 80  # Phoneme accuracy threshold
 # Load .env file
 load_dotenv()
 
