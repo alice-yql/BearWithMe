@@ -24,6 +24,11 @@ html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;backg
 button{background:var(--accent);color:white;border:none;padding:10px 14px;border-radius:8px;font-weight:600;cursor:pointer}
 button:active{transform:translateY(1px)}
 
+.bottom-controls{margin-top:14px;display:flex;gap:10px}
+.secondary{background:#28a745;color:white;border:1px solid rgba(40,167,69,0.18)}
+.danger{background:#ff6b6b;color:white}
+.secondary:active, .danger:active{transform:translateY(1px)}
+
 @media (max-width:520px){
   .word{font-size:34px}
   .word-card{height:280px}

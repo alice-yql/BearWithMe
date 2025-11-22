@@ -16,6 +16,8 @@ const timerEl = document.getElementById('timer');
 const totalEl = document.getElementById('totalTime');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
+const stopBtn = document.getElementById('stopBtn');
+const resetBtn = document.getElementById('resetBtn');
 
 let timerInterval = null;
 let startTs = null;
@@ -28,13 +30,19 @@ function formatMs(ms) {
   return `${m}:${sec}`;
 }
 
+function totalMs() {
+  const base = durations.reduce((a, b) => a + b, 0);
+  if (startTs != null) return base + (Date.now() - startTs);
+  return base;
+}
+
 function startTimer() {
   startTs = Date.now();
   if (timerInterval) clearInterval(timerInterval);
   timerInterval = setInterval(() => {
     const elapsed = durations[idx] + (Date.now() - startTs);
     timerEl.textContent = `Time: ${formatMs(elapsed)}`;
-    if (totalEl) totalEl.textContent = `Total: ${formatMs(elapsed)}`;
+    if (totalEl) totalEl.textContent = `Total: ${formatMs(totalMs())}`;
   }, 120);
 }
 
@@ -49,7 +57,7 @@ function stopTimer() {
     startTs = null;
   }
   timerEl.textContent = `Time: ${formatMs(durations[idx])}`;
-  if (totalEl) totalEl.textContent = `Total: ${formatMs(durations[idx])}`;
+  if (totalEl) totalEl.textContent = `Total: ${formatMs(totalMs())}`;
 }
 
 function render() {
@@ -57,7 +65,7 @@ function render() {
   wordEl.textContent = w.text;
   breakdownEl.textContent = w.breakdown || '';
   timerEl.textContent = `Time: ${formatMs(durations[idx])}`;
-  if (totalEl) totalEl.textContent = `Total: ${formatMs(durations[idx])}`;
+  if (totalEl) totalEl.textContent = `Total: ${formatMs(totalMs())}`;
   startTimer();
 }
 
@@ -93,3 +101,39 @@ window.addEventListener('beforeunload', () => {
 
 // initial render
 render();
+
+// Stop/Resume toggle
+if (stopBtn) {
+  stopBtn.addEventListener('click', () => {
+    // If timer is running, stop it and change to "Resume"
+    if (startTs != null) {
+      stopTimer();
+      stopBtn.textContent = 'Resume';
+      stopBtn.classList.add('secondary');
+    } else {
+      // Resume
+      startTimer();
+      stopBtn.textContent = 'Pause';
+      stopBtn.classList.remove('secondary');
+    }
+  });
+}
+
+// Reset all durations
+if (resetBtn) {
+  resetBtn.addEventListener('click', () => {
+    const ok = window.confirm('Clear all recorded times? This cannot be undone.');
+    if (!ok) return;
+    const wasRunning = startTs != null;
+    stopTimer();
+    durations = new Array(words.length).fill(0);
+    try {
+      localStorage.setItem('wordDurations', JSON.stringify(durations));
+    } catch (e) {}
+    // update UI
+    timerEl.textContent = `Time: ${formatMs(durations[idx])}`;
+    if (totalEl) totalEl.textContent = `Total: ${formatMs(totalMs())}`;
+    // if previously running, restart fresh
+    if (wasRunning) startTimer();
+  });
+}
