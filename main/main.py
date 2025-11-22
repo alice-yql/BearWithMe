@@ -9,7 +9,9 @@ from elevenlabs import ElevenLabs
 import tempfile
 import os
 import time
+import sys
 from dotenv import load_dotenv
+import pygame
 
 THRESHOLD = 80  # Phoneme accuracy threshold
 # Load .env file
@@ -50,7 +52,21 @@ def speak(text):
         for chunk in audio_stream:
             f.write(chunk)
         temp_path = f.name
-    os.system(f"afplay '{temp_path}'")
+    
+    # Play audio directly without opening a window
+    try:
+        pygame.mixer.init()
+        pygame.mixer.music.load(temp_path)
+        pygame.mixer.music.play()
+        # Wait for playback to finish
+        while pygame.mixer.music.get_busy():
+            time.sleep(0.1)
+    finally:
+        # Clean up temp file
+        try:
+            os.unlink(temp_path)
+        except:
+            pass
 
 def azure_phoneme_to_text(phoneme):
     """
