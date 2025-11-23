@@ -1,0 +1,132 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--beige-light);
+}
+
+.app-header {
+  background: var(--ivory);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background: rgba(253, 249, 245, 0.95);
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.header-content {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 0;
+}
+
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.header-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.header-title h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.02em;
+  color: var(--brown-dark);
+}
+
+.dashboard-toggle-btn {
+  background: var(--accent-terracotta);
+  border: none;
+  color: white;
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: url('/Paw-cursor.png') 16 16, pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px var(--shadow);
+  letter-spacing: 0.02em;
+}
+
+.dashboard-toggle-btn:hover {
+  background: var(--accent-terracotta-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--shadow-md);
+}
+
+.app-main {
+  flex: 1;
+  padding: 2rem;
+  width: 100%;
+  min-height: calc(100vh - 100px);
+}
+
+.page-placeholder {
+  background: var(--ivory);
+  border-radius: 1rem;
+  padding: 4rem 2rem;
+  text-align: center;
+  box-shadow: 0 2px 8px var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.page-placeholder h2 {
+  font-size: 2rem;
+  color: var(--brown-dark);
+  margin-bottom: 1rem;
+}
+
+.page-placeholder p {
+  color: var(--brown-muted);
+  font-size: 1.125rem;
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    padding: 1rem 1.5rem;
+  }
+
+  .header-content {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .header-title {
+    flex: 1;
+  }
+
+  .header-title h1 {
+    font-size: 1.5rem;
+  }
+
+  .dashboard-toggle-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .app-main {
+    padding: 1rem;
+  }
+}
+

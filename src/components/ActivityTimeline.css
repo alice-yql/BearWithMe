@@ -1,0 +1,144 @@
+.activity-timeline {
+  background: var(--ivory);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 2px 8px var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 1rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 0.5rem;
+  top: 1.5rem;
+  bottom: -1rem;
+  width: 2px;
+  background: var(--border);
+}
+
+.timeline-item:last-child::before {
+  display: none;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent-terracotta);
+  border: 2px solid var(--ivory);
+  z-index: 1;
+}
+
+.timeline-content {
+  flex: 1;
+  background: var(--beige-light);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-word {
+  font-weight: 600;
+  color: var(--brown-dark);
+  font-size: 1rem;
+}
+
+.timeline-time {
+  font-size: 0.8125rem;
+  color: var(--brown-muted);
+}
+
+.timeline-details {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.timeline-score {
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+}
+
+.timeline-score.excellent {
+  background: rgba(122, 155, 118, 0.15);
+  color: var(--success);
+}
+
+.timeline-score.good {
+  background: rgba(201, 125, 96, 0.15);
+  color: var(--accent-terracotta);
+}
+
+.timeline-score.fair {
+  background: rgba(212, 165, 116, 0.15);
+  color: var(--warning);
+}
+
+.timeline-score.poor {
+  background: rgba(201, 125, 96, 0.2);
+  color: var(--danger);
+}
+
+.timeline-duration {
+  font-size: 0.8125rem;
+  color: var(--brown-muted);
+}
+
+.empty-state {
+  padding: 2rem;
+  text-align: center;
+  color: var(--brown-muted);
+  font-style: italic;
+}
+
+.timeline-footer {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.view-all-link {
+  background: none;
+  border: none;
+  color: var(--accent-terracotta);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: url('/Paw-cursor.png') 16 16, pointer;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
+  text-decoration: none !important;
+  display: inline-block;
+}
+
+.view-all-link:hover {
+  color: var(--brown-dark);
+  text-decoration: none !important;
+}
+

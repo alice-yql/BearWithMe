@@ -1,0 +1,99 @@
+.performance-overview {
+  background: var(--ivory);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--brown-dark);
+  margin: 0 0 1.5rem 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.stat-card {
+  background: var(--beige-light);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow-md);
+}
+
+.stat-icon {
+  font-size: 1.75rem;
+  color: var(--brown);
+  opacity: 0.7;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.25rem;
+}
+
+.stat-content {
+  flex: 1;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--brown-dark);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--brown-muted);
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+}
+
+.stat-sublabel {
+  font-size: 0.75rem;
+  color: var(--brown-muted);
+  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  margin-top: 0.25rem;
+}
+
+.stat-trend {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.stat-trend.positive {
+  color: #7A9B76; /* Green for good/improving */
+}
+
+.stat-trend.negative {
+  color: #C97D60; /* Red for struggling */
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

@@ -1,0 +1,139 @@
+.growth-tracking {
+  background: var(--ivory);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.chart-container {
+  width: 100%;
+}
+
+.chart-header {
+  margin-bottom: 1.5rem;
+}
+
+.chart-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--brown-dark);
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.chart-wrapper {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  padding: 2rem 3rem 3rem 4rem;
+  background: var(--beige-light);
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+}
+
+.line-chart {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.trend-line {
+  stroke: #3B82F6; /* Blue for neutral chart line */
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.data-point {
+  cursor: url('/Paw-cursor.png') 16 16, pointer;
+  transition: all 0.2s ease;
+}
+
+.data-point:hover {
+  r: 3;
+  filter: drop-shadow(0 0 4px #3B82F6);
+}
+
+.chart-tooltip {
+  position: absolute;
+  background: var(--brown-dark);
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.8125rem;
+  font-family: 'Inter', sans-serif;
+  pointer-events: none;
+  z-index: 10;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip-date {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.tooltip-accuracy {
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.y-axis-labels {
+  position: absolute;
+  left: 0;
+  top: 2rem;
+  bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--brown-muted);
+  font-family: 'Inter', sans-serif;
+  width: 3rem;
+  text-align: right;
+  padding-right: 0.5rem;
+}
+
+.x-axis-labels {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 4rem;
+  right: 3rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--brown-muted);
+  font-family: 'Inter', sans-serif;
+}
+
+.empty-state {
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--brown-muted);
+  font-family: 'Inter', sans-serif;
+}
+
+.empty-state p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .chart-wrapper {
+    padding: 1.5rem 2rem 2.5rem 3rem;
+    height: 250px;
+  }
+
+  .y-axis-labels {
+    width: 2.5rem;
+    font-size: 0.7rem;
+  }
+
+  .x-axis-labels {
+    left: 3rem;
+    right: 2rem;
+    font-size: 0.7rem;
+  }
+}
+

@@ -1,0 +1,91 @@
+.struggling-words {
+  background: var(--ivory);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 2px 8px var(--shadow);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent-terracotta);
+}
+
+.struggling-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.struggling-card {
+  background: var(--beige-light);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+}
+
+.struggling-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.struggling-word-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--brown-dark);
+}
+
+.struggling-accuracy {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent-terracotta);
+  padding: 0.375rem 0.875rem;
+  background: rgba(201, 125, 96, 0.15);
+  border-radius: 1rem;
+}
+
+.struggling-tips {
+  margin-bottom: 0.75rem;
+}
+
+.tips-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--brown);
+  margin-bottom: 0.5rem;
+}
+
+.tips-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.tips-list li {
+  font-size: 0.8125rem;
+  color: var(--brown-muted);
+  padding-left: 1rem;
+  position: relative;
+}
+
+.tips-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--accent-terracotta);
+}
+
+.struggling-practice-count {
+  font-size: 0.8125rem;
+  color: var(--brown-muted);
+  font-style: italic;
+}
+
+.empty-state.positive {
+  padding: 2rem;
+  text-align: center;
+  color: var(--success);
+  font-weight: 500;
+}
+

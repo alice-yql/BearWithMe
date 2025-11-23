@@ -1,0 +1,95 @@
+.achievement-teaser {
+  background: var(--ivory);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px var(--shadow);
+  border: 1px solid var(--border);
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  position: relative;
+}
+
+.teaser-emoji {
+  font-size: 2.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.teaser-content {
+  flex: 1;
+}
+
+.teaser-title {
+  font-size: 0.8125rem;
+  color: var(--brown-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.teaser-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--brown-dark);
+  margin-bottom: 0.75rem;
+}
+
+.teaser-progress {
+  margin-bottom: 0.75rem;
+}
+
+.teaser-progress-bar {
+  width: 100%;
+  height: 8px;
+  background: var(--beige);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.teaser-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-terracotta) 0%, var(--warning) 100%);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.teaser-progress-text {
+  font-size: 0.8125rem;
+  color: var(--brown-muted);
+  font-weight: 500;
+}
+
+.teaser-message {
+  font-size: 0.875rem;
+  color: var(--brown);
+  font-weight: 500;
+}
+
+.teaser-view-all {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--accent-terracotta);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: url('/Paw-cursor.png') 16 16, pointer;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.2s ease;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none !important;
+}
+
+.teaser-view-all:hover {
+  color: var(--brown-dark);
+  text-decoration: none !important;
+}
+

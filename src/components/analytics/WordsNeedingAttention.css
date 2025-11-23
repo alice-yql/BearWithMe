@@ -1,0 +1,129 @@
+.words-needing-attention {
+  background: var(--ivory);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.words-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Inter', sans-serif;
+}
+
+.words-table thead {
+  background: var(--beige-light);
+  border-bottom: 2px solid var(--border);
+}
+
+.words-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--brown-dark);
+  font-size: 0.875rem;
+  font-family: 'Montserrat', sans-serif;
+  white-space: nowrap;
+}
+
+.words-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--brown);
+  font-size: 0.9375rem;
+}
+
+.words-table tbody tr:hover {
+  background: var(--beige-light);
+}
+
+.word-name {
+  font-weight: 600;
+  color: var(--brown-dark);
+}
+
+.accuracy-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.accuracy-red {
+  background: rgba(201, 125, 96, 0.15);
+  color: #C97D60; /* Red for struggling */
+}
+
+.accuracy-yellow {
+  background: rgba(212, 165, 116, 0.15);
+  color: #D4A574; /* Yellow for needs attention */
+}
+
+.accuracy-blue {
+  background: rgba(59, 130, 246, 0.15);
+  color: #3B82F6; /* Blue for neutral */
+}
+
+.attempts,
+.last-practiced {
+  color: var(--brown-muted);
+}
+
+.insight {
+  color: var(--brown-muted);
+  font-style: italic;
+  font-size: 0.875rem;
+}
+
+.empty-state {
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--brown-muted);
+  font-family: 'Inter', sans-serif;
+}
+
+.empty-state p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.view-all-link-container {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.view-all-link {
+  background: none;
+  border: none;
+  color: var(--accent-terracotta);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: url('/Paw-cursor.png') 16 16, pointer;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.view-all-link:hover {
+  color: var(--brown-dark);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .words-table {
+    font-size: 0.875rem;
+  }
+
+  .words-table th,
+  .words-table td {
+    padding: 0.75rem 0.5rem;
+  }
+}
+

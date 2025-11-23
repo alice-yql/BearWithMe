@@ -1,0 +1,171 @@
+.practice-heatmap {
+  background: var(--ivory);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.practice-heatmap .section-title {
+  margin-bottom: 1rem;
+}
+
+.heatmap-container {
+  width: 100%;
+}
+
+.heatmap-wrapper {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.heatmap-wrapper:not(.single-row) {
+  gap: 0.3rem;
+}
+
+
+.heatmap-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.heatmap-month-labels {
+  display: flex;
+  gap: 0.15rem;
+  height: 0.875rem;
+  margin-bottom: 0.15rem;
+}
+
+.month-label {
+  flex: 1;
+  font-size: 0.7rem;
+  color: var(--brown-muted);
+  font-family: 'Inter', sans-serif;
+  text-align: left;
+  padding-left: 0.2rem;
+}
+
+.heatmap-weeks {
+  display: flex;
+  gap: 0.15rem;
+}
+
+.heatmap-week {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  flex: 1;
+}
+
+.heatmap-day {
+  border-radius: 4px;
+  cursor: url('/Paw-cursor.png') 16 16, pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.heatmap-wrapper.single-row {
+  justify-content: center;
+}
+
+.heatmap-single-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.heatmap-day-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.day-label-top,
+.day-label-bottom {
+  font-size: 0.75rem;
+  color: var(--brown-muted);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
+.heatmap-day:hover {
+  transform: scale(1.3);
+  z-index: 1;
+  position: relative;
+  border: 2px solid var(--brown-dark);
+}
+
+.intensity-0 {
+  background: var(--beige-light);
+  border: 1px solid var(--border);
+}
+
+.intensity-1 {
+  background: var(--border);
+}
+
+.intensity-2 {
+  background: var(--border-dark);
+}
+
+.intensity-3 {
+  background: var(--accent-terracotta-light);
+}
+
+.intensity-4 {
+  background: var(--brown);
+}
+
+.heatmap-legend {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: var(--brown-muted);
+  font-family: 'Inter', sans-serif;
+  margin-top: 0.5rem;
+  padding-left: 2.5rem;
+}
+
+.legend-label {
+  font-size: 0.7rem;
+}
+
+.legend-colors {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.legend-color {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .heatmap-wrapper {
+    flex-direction: column;
+  }
+
+  .heatmap-day-labels {
+    display: none;
+  }
+
+  .heatmap-weeks {
+    flex-wrap: wrap;
+  }
+
+  .heatmap-week {
+    flex: 0 0 auto;
+  }
+}
+

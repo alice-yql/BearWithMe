@@ -1,0 +1,111 @@
+.needs-attention {
+  background: var(--ivory);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 2px 8px var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.struggling-words-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.struggling-word-card {
+  background: var(--beige-light);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent-terracotta);
+}
+
+.struggling-word-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.struggling-word-name {
+  font-weight: 600;
+  color: var(--brown-dark);
+  font-size: 1rem;
+}
+
+.struggling-word-accuracy {
+  font-weight: 600;
+  color: var(--accent-terracotta);
+  font-size: 0.9375rem;
+}
+
+.struggling-word-tip {
+  font-size: 0.875rem;
+  color: var(--brown-muted);
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tip-icon {
+  font-size: 1rem;
+  color: var(--brown-muted);
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+.practice-reminder {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: var(--beige-light);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent-terracotta);
+}
+
+
+.reminder-content {
+  flex: 1;
+}
+
+.reminder-title {
+  font-weight: 600;
+  color: var(--brown-dark);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.reminder-message {
+  font-size: 0.9375rem;
+  color: var(--brown-muted);
+  line-height: 1.5;
+}
+
+.needs-attention-footer {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.view-all-link {
+  background: none;
+  border: none;
+  color: var(--accent-terracotta);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: url('/Paw-cursor.png') 16 16, pointer;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.view-all-link:hover {
+  color: var(--brown-dark);
+}
+

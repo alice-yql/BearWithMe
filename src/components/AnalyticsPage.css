@@ -1,0 +1,147 @@
+.analytics-page {
+  animation: fadeIn 0.4s ease-in;
+  padding-bottom: 2rem;
+}
+
+.analytics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.analytics-header-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.analytics-avatar {
+  font-size: 3rem;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--beige);
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  flex-shrink: 0;
+}
+
+.analytics-header-info {
+  flex: 1;
+}
+
+.analytics-page-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--brown-dark);
+  margin: 0 0 0.5rem 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.analytics-subtitle {
+  font-size: 1rem;
+  color: var(--brown-muted);
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.analytics-header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.date-range-selector {
+  padding: 0.625rem 2.5rem 0.625rem 1rem;
+  border: 1px solid #CCCCCC;
+  border-radius: 0.5rem;
+  background: var(--ivory);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23000' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 12px;
+  color: var(--brown-dark);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  cursor: url('/Paw-cursor.png') 16 16, pointer;
+  transition: all 0.2s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  min-width: 160px;
+  box-sizing: border-box;
+  outline: none;
+  display: block;
+}
+
+.date-range-selector:hover {
+  border-color: #999999;
+  background-color: var(--beige-light);
+}
+
+.date-range-selector:focus {
+  outline: none;
+  border-color: #CCCCCC;
+}
+
+.date-range-selector:active {
+  border-color: #999999;
+}
+
+.export-btn {
+  padding: 0.625rem 1.5rem;
+  background: var(--accent-terracotta);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: url('/Paw-cursor.png') 16 16, pointer;
+  transition: all 0.2s ease;
+}
+
+.export-btn:hover {
+  background: var(--brown-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .analytics-header {
+    flex-direction: column;
+  }
+
+  .analytics-header-right {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .date-range-selector,
+  .export-btn {
+    width: 100%;
+  }
+
+  .analytics-page-title {
+    font-size: 1.75rem;
+  }
+}
+

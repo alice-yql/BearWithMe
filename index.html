@@ -1,40 +1,17 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bear With Me!</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/bear-icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bear With Me - Parent Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Montserrat:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
   </head>
   <body>
-    <header class="site-header">
-      <div class="header-inner">
-        <h1>Bear With Me!</h1>
-        <p class="tag">Your favourite speech help bestie!</p>
-      </div>
-    </header>
-
-    <main class="main">
-      <section class="start-screen">
-        <div class="word-card" id="wordCard">
-          <div class="total" id="totalTime">Total: 0.0s</div>
-          <div class="word" id="word">Hello</div>
-          <div class="timer" id="timer" aria-live="polite">Time: 0.0s</div>
-          <div class="breakdown" id="breakdown">
-            <!-- Placeholder: pronunciation breakdown will go here -->
-          </div>
-        </div>
-        <div class="controls">
-          <button id="prevBtn">← Prev</button>
-          <button id="nextBtn">Next →</button>
-        </div>
-        <div class="bottom-controls">
-          <button id="stopBtn" class="secondary">Pause</button>
-          <button id="resetBtn" class="danger">Reset</button>
-        </div>
-      </section>
-    </main>
-
-    <script src="script.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
+

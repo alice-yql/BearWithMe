@@ -1,0 +1,118 @@
+.date-range-dropdown {
+  position: relative;
+}
+
+.date-range-dropdown-toggle {
+  padding: 0.625rem 2rem 0.625rem 0.625rem;
+  border: 1px solid #CCCCCC;
+  border-radius: 0.5rem;
+  background: var(--ivory);
+  color: var(--brown-dark);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  cursor: url('/Paw-cursor.png') 16 16, pointer;
+  transition: all 0.2s ease;
+  min-width: 165px;
+  box-sizing: border-box;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.date-range-dropdown-toggle span {
+  flex: 1;
+}
+
+.dropdown-arrow {
+  flex-shrink: 0;
+  margin-left: 0;
+  transition: transform 0.2s ease;
+  position: absolute;
+  right: 0.625rem;
+}
+
+.date-range-dropdown-toggle:hover {
+  border-color: #999999;
+  background-color: var(--beige-light);
+}
+
+.date-range-dropdown-toggle:focus {
+  outline: none;
+  border-color: #CCCCCC;
+}
+
+.dropdown-arrow {
+  flex-shrink: 0;
+  margin-left: 0;
+  transition: transform 0.2s ease;
+}
+
+.date-range-dropdown-toggle[aria-expanded="true"] .dropdown-arrow,
+.date-range-dropdown:has(.date-range-dropdown-menu) .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.date-range-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.25rem);
+  left: 0;
+  right: 0;
+  background: var(--ivory);
+  border: 1px solid #CCCCCC;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  overflow: hidden;
+  animation: fadeInDown 0.2s ease;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-option {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #E0E0E0;
+  color: var(--brown-dark);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  text-align: left;
+  cursor: url('/Paw-cursor.png') 16 16, pointer;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.dropdown-option:last-child,
+.dropdown-option.last {
+  border-bottom: 1px solid #CCCCCC;
+}
+
+.dropdown-option:hover {
+  background: var(--beige-light);
+}
+
+.dropdown-option.selected {
+  background: #3B82F6;
+  color: white;
+}
+
+.dropdown-option.selected:hover {
+  background: #2563EB;
+}
+

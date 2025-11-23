@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  cursor: url('/Paw-cursor.png') 16 16, auto !important;
+}
+
+* {
+  cursor: inherit;
+}
+
+:root {
+  /* Background Colors - Warm Off-White/Beige (inspired by bear) */
+  --beige-light: #FDF9F5;
+  --beige: #FAF5F0;
+  --beige-dark: #F5EDE5;
+  --beige-darker: #F0E6DC;
+  
+  /* Text Colors - Dark Brown (inspired by bear) */
+  --brown-dark: #3D2817;
+  --brown: #5C3F2A;
+  --brown-light: #6B4E3A;
+  --brown-muted: #8B6F5A;
+  
+  /* Accent Colors - Warm Browns (inspired by bear colors) */
+  --accent-terracotta: #8B5A3C;
+  --accent-terracotta-light: #A67C5F;
+  --accent-sage: #7A6B5A;
+  --accent-sage-light: #9A8B7A;
+  
+  /* Neutral Colors */
+  --cream: #FDF9F5;
+  --ivory: #FFFFFF;
+  --card: #FFFFFF;
+  
+  /* Status Colors - Warm tones */
+  --success: #7A9B76;
+  --success-light: #8FAD8B;
+  --warning: #D4A574;
+  --danger: #C97D60;
+  
+  /* Shadows - Softer, warmer */
+  --shadow: rgba(61, 40, 23, 0.06);
+  --shadow-md: rgba(61, 40, 23, 0.1);
+  --shadow-lg: rgba(61, 40, 23, 0.14);
+  
+  /* Borders - Warm beige tones */
+  --border: #E8DDD2;
+  --border-dark: #D4C5B8;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--beige-light);
+  color: var(--brown-dark);
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+a, button, [role="button"], [onclick], input[type="button"], input[type="submit"], .clickable, label, select, .nav-dropdown-toggle, .back-arrow-btn {
+  cursor: url('/Paw-cursor.png') 16 16, pointer !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 600;
+  color: var(--brown-dark);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+#root {
+  min-height: 100vh;
+}
+

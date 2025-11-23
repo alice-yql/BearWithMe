@@ -1,0 +1,257 @@
+.dashboard-home {
+  animation: fadeIn 0.4s ease-in;
+  padding-bottom: 2rem;
+}
+
+/* Hero Section */
+.hero-section {
+  background: var(--ivory);
+  border-radius: 1.25rem;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px var(--shadow-md);
+  border: 1px solid var(--border);
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-avatar {
+  font-size: 4rem;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F5E6E8;
+  border-radius: 50%;
+}
+
+.hero-info {
+  flex: 1;
+}
+
+.hero-name {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--brown-dark);
+  margin: 0 0 0.75rem 0;
+}
+
+.hero-streak {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.streak-emoji {
+  font-size: 1.5rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+.streak-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-terracotta);
+}
+
+.streak-label {
+  font-size: 1.125rem;
+  color: var(--brown-muted);
+  font-weight: 500;
+}
+
+.hero-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.today-status {
+  padding: 0.625rem 1.25rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.today-status.practiced {
+  background: rgba(122, 155, 118, 0.15);
+  color: var(--success);
+  border: 1px solid rgba(122, 155, 118, 0.3);
+}
+
+.today-status.not-practiced {
+  background: rgba(201, 125, 96, 0.15);
+  color: var(--accent-terracotta);
+  border: 1px solid rgba(201, 125, 96, 0.3);
+}
+
+.motivational-message {
+  font-size: 1rem;
+  color: var(--brown);
+  font-style: italic;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.motivational-message:empty::before {
+  content: "Loading...";
+  opacity: 0.6;
+}
+
+/* Metrics Row */
+.metrics-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.metric-card {
+  background: var(--ivory);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 2px 8px var(--shadow);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow-md);
+}
+
+.metric-icon {
+  font-size: 1.75rem;
+  color: var(--brown);
+  opacity: 0.7;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.metric-content {
+  flex: 1;
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--brown-dark);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.metric-label {
+  font-size: 0.875rem;
+  color: var(--brown-muted);
+  font-weight: 500;
+}
+
+/* Content sections are now stacked vertically */
+.activity-timeline,
+.needs-attention,
+.achievement-teaser {
+  margin-bottom: 2rem;
+}
+
+/* Quick Actions */
+.quick-actions {
+  background: var(--ivory);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--brown-dark);
+  margin: 0 0 1.5rem 0;
+}
+
+.action-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 600px;
+}
+
+.action-btn {
+  background: var(--beige);
+  border: 1px solid var(--border-dark);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: url('/Paw-cursor.png') 16 16, pointer;
+  transition: all 0.3s ease;
+  color: var(--brown);
+}
+
+.action-btn:hover {
+  background: var(--accent-terracotta);
+  color: white;
+  border-color: var(--accent-terracotta);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow-md);
+}
+
+.action-icon {
+  font-size: 2rem;
+}
+
+.action-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 1.5rem;
+  }
+
+  .hero-name {
+    font-size: 1.5rem;
+  }
+
+  .hero-avatar {
+    width: 60px;
+    height: 60px;
+    font-size: 3rem;
+  }
+
+  .streak-value {
+    font-size: 2rem;
+  }
+
+  .metrics-row {
+    grid-template-columns: 1fr;
+  }
+
+  .action-buttons {
+    grid-template-columns: 1fr;
+  }
+}
+
