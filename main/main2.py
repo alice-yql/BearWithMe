@@ -30,7 +30,7 @@ THRESHOLD = int(os.getenv('THRESHOLD', '80'))  # phoneme score threshold
 PROMPTS = {
     "intro": "Let's practice the word {}.",
     "phoneme_practice": "Let's practice the sound {}.",
-    "repeat_phoneme": "Can you say {}?",
+    "repeat_phoneme": "That's not quite right, can you say {}?",
     "success_phoneme": "Nice! Much better!",
     "all_correct": "Great job! You pronounced all the sounds correctly."
 }
@@ -102,11 +102,12 @@ def assess_pronunciation_phonemes(target_word):
         granularity=speechsdk.PronunciationAssessmentGranularity.Phoneme,
         enable_miscue=True
     )
-
+    global i
     recognizer = speechsdk.SpeechRecognizer(speech_config=speech_config, audio_config=audio_config)
     pronunciation_config.apply_to(recognizer)
 
-    print(f"\n🎤 Say the word '{target_word}' now...")
+    speak(f"Please say the word {target_word} now.")
+
     result = recognizer.recognize_once_async().get()
 
     if result.reason != speechsdk.ResultReason.RecognizedSpeech:
@@ -135,9 +136,8 @@ def give_phoneme_feedback(word, phoneme_scores):
         if score < THRESHOLD:
             low_scores += 1
             readable = azure_phoneme_to_text(phoneme)
-            speak(PROMPTS["phoneme_practice"].format(readable))
-            speak(readable)
             speak(PROMPTS["repeat_phoneme"].format(readable))
+            time.sleep(0.5)
             speak(PROMPTS["success_phoneme"])
 
     if low_scores == 0:
@@ -146,16 +146,27 @@ def give_phoneme_feedback(word, phoneme_scores):
 
 
 def main():
-    target_word = "banana"
-    phoneme_scores = assess_pronunciation_phonemes(target_word)
 
-    if phoneme_scores:
+    target_word = "goat"
+
+    while True:
+        phoneme_scores = assess_pronunciation_phonemes(target_word)
+
+        if not phoneme_scores:
+
+            print("❌ Incorrect pronunciation. Let's try again.")
+            continue
+
         print("\n📊 Phoneme-level scores:")
         for ph, sc in phoneme_scores.items():
             print(f"{ph}: {sc:.1f}%")
+
         give_phoneme_feedback(target_word, phoneme_scores)
-    else:
-        print("❌ Could not assess pronunciation.")
+
+        # If everything was correct, break the loop
+        if all(score >= THRESHOLD for score in phoneme_scores.values()):
+            break
+
 
 
 if __name__ == "__main__":
