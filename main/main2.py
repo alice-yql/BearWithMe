@@ -10,21 +10,17 @@ import tempfile
 import os
 import sys
 import time
-from dotenv import load_dotenv
 import pygame
 
-# Load environment variables from .env file
-load_dotenv()
-
 # --- CONFIG --- #
-# Azure
-AZURE_KEY = os.getenv('AZURE_KEY')
-AZURE_REGION = os.getenv('AZURE_REGION', 'eastus')
+# Azure - Hardcoded API keys
+AZURE_KEY = "481cEqHk3bzX4gUtXAz7658eQJkv9IMnR7Acw9qP17NcgZ10lddkJQQJ99BKACYeBjFXJ3w3AAAYACOGoajC"
+AZURE_REGION = "eastus"
 
-# ElevenLabs
-ELEVEN_API_KEY = os.getenv('ELEVEN_API_KEY')
-VOICE_ID = os.getenv('VOICE_ID', 'EXAVITQu4vr4xnSDxMaL')
-THRESHOLD = int(os.getenv('THRESHOLD', '80'))  # phoneme score threshold
+# ElevenLabs - Hardcoded API keys
+ELEVEN_API_KEY = "92ad442e51346f0803cc0d10d9f353c90bcc922b2b72e619f69e9bd5fff897bd"
+VOICE_ID = "EXAVITQu4vr4xnSDxMaL"
+THRESHOLD = 80  # phoneme score threshold
 
 # Feedback prompts
 PROMPTS = {

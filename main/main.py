@@ -10,20 +10,17 @@ import tempfile
 import os
 import time
 import sys
-from dotenv import load_dotenv
 import pygame
 
 THRESHOLD = 80  # Phoneme accuracy threshold
-# Load .env file
-load_dotenv()
 
-# Azure
-AZURE_KEY = os.getenv("AZURE_KEY")
-AZURE_REGION = os.getenv("AZURE_REGION")
+# Azure - Hardcoded API keys
+AZURE_KEY = "481cEqHk3bzX4gUtXAz7658eQJkv9IMnR7Acw9qP17NcgZ10lddkJQQJ99BKACYeBjFXJ3w3AAAYACOGoajC"
+AZURE_REGION = "eastus"
 
-# ElevenLabs
-ELEVEN_API_KEY = os.getenv("ELEVEN_API_KEY")
-VOICE_ID = os.getenv("VOICE_ID")
+# ElevenLabs - Hardcoded API keys
+ELEVEN_API_KEY = "92ad442e51346f0803cc0d10d9f353c90bcc922b2b72e619f69e9bd5fff897bd"
+VOICE_ID = "EXAVITQu4vr4xnSDxMaL"
 
 print("Azure key:", AZURE_KEY)
 
@@ -171,7 +168,6 @@ def practice_word(target_word):
 
 # --- RUN ---
 if __name__ == "__main__":
-    load_dotenv()
     target_word = "hello"
     speak(PROMPTS["intro"].format(target_word))
     practice_word(target_word)
